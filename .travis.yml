@@ -1,0 +1,23 @@
+language: node_js
+node_js: [node]
+
+before_install:
+  # Export the C++11 compiler.
+  - if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CXX=g++-4.8; fi
+
+cache: yarn
+
+matrix:
+  include:
+  - env: TEST_TYPE=lint:ts
+
+before_script:
+  # When linting, build the dependencies so they can be resolved.
+  - yarn lerna bootstrap
+
+script:
+  # Run testing or linting depending on the environment.
+  - |
+    set -e
+    yarn $TEST_TYPE
+    set +e
