@@ -7,7 +7,7 @@ interface Form extends FormT<Form> {
     lift() : FormT<Form>;
 }
 
-function fmap<A, B>(a : FormT<A>, f: (src: A) => B) {
+function fmap<A, B>(a : FormT<A>, f: (src: A) => B) : FormT<B> {
     const {children} = a
     if (children) {
         return a.setChildren(children.map(f))
