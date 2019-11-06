@@ -8,13 +8,6 @@
   "files": [
     "lib/"
   ],
-  "peerDependencies": {
-    "debug": "^4.1.1",
-    "immer": "^1.10.0"
-  },
-  "devDependencies" : {
-    "typescript": "^3.3.3333"
-  },
   "scripts": {
     "clean": "rm -rf ./dist ./lib ./node_modules"
   },
