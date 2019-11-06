@@ -6,12 +6,8 @@
   "repository": "git://github.com/zhujinxuan/nipah.git",
   "main": "lib/index.js",
   "files": [
-    "dist/",
     "lib/"
   ],
-  "dependencies" : {
-    "nipah-memoize" : "^0.0.1"
-  },
   "peerDependencies": {
     "debug": "^4.1.1",
     "immer": "^1.10.0"
